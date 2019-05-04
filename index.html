@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Viewstl Javascript Plugin - Simple Example</title>
+        <title>Viewstl Javascript Plugin - User file</title>
     </head>
+
+    <style>
+        body {text-align:center;}
+    </style>
+
+    <script>
+    </script>
 
     <body>
         <div id="stl_cont" style="width:500px;height:500px;margin:0 auto;"></div>
-
-        <script src="stl_viewer.min.js"></script>        
+        
+        <script src="stl_viewer.min.js"></script>
+            
         <script>
-            var stl_viewer=new StlViewer
-            (
-                document.getElementById("stl_cont"),
-                {
-                    models:
-                    [
-                        {filename:"viewstl_plugin.stl"}
-                    ]
-                }
-            );
+            var stl_viewer=new StlViewer ( document.getElementById("stl_cont") );
         </script>
         
+        <input type="file" onchange='stl_viewer.add_model({local_file:this.files[0]});' accept="*.*">
+        
     </body>
-</html> 
+</html>  
